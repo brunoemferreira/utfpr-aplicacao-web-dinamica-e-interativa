@@ -1,7 +1,7 @@
 # SaborArt — Alta Gastronomia & Receitas Culinárias
-### Projeto Final — Aplicação Web Dinâmica e Interativa (UTFPR)
+### Projeto disciplina UTFPR - Desenvolvimento de Aplicações Web Dinâmicas e Interativas
 
-> Aplicação web completa desenvolvida em **React 19 com TypeScript** e **Mantine UI**, consumindo a API pública de receitas da [DummyJSON](https://dummyjson.com/recipes).
+> Aplicação web completa desenvolvida em **React 19 com TypeScript** e **Mantine UI 9**, consumindo a API pública de receitas da [DummyJSON](https://dummyjson.com/recipes).
 
 🔗 **Deploy (Aplicação no ar):** [https://brunoemferreira.github.io/utfpr-aplicacao-web-dinamica-e-interativa/](https://brunoemferreira.github.io/utfpr-aplicacao-web-dinamica-e-interativa/)  
 📦 **Repositório GitHub:** [https://github.com/brunoemferreira/utfpr-aplicacao-web-dinamica-e-interativa](https://github.com/brunoemferreira/utfpr-aplicacao-web-dinamica-e-interativa)
@@ -38,7 +38,7 @@ A aplicação possui separação estrita de áreas:
 ## 🚀 Como Executar o Projeto Localmente
 
 ### Pré-requisitos
-- **Node.js** (v18 ou superior, recomendado v20+)
+- **Node.js** (v22.x LTS ou superior — exigido pelo `@testing-library/jest-dom` v7)
 - **Yarn** (v1.22+) ou **npm**
 
 ### Passo a Passo
@@ -49,9 +49,9 @@ A aplicação possui separação estrita de áreas:
    cd utfpr-aplicacao-web-dinamica-e-interativa
    ```
 
-2. **Instalar as dependências com lockfile congelado:**
+2. **Instalar as dependências:**
    ```bash
-   yarn install --frozen-lockfile
+   yarn install
    ```
 
 3. **Iniciar o servidor de desenvolvimento:**
@@ -115,9 +115,9 @@ A aplicação possui separação estrita de áreas:
 
 - [x] **10. Pipeline de CI/CD e deploy em produção**  
   - **Como foi resolvido:** Workflows criados no diretório `.github/workflows/`:
-    - `ci.yml`: Disparado a cada `push` e `pull_request` na branch `main`. Realiza checkout, setup do Node.js 20, instalação com lockfile congelado (`yarn install --frozen-lockfile`), execução dos testes do Vitest (`yarn test`) e dos testes E2E do Playwright (`yarn test:e2e`).
+    - `ci.yml`: Disparado a cada `push` e `pull_request` na branch `main`. Realiza checkout, setup do Node.js 22 LTS, instalação com `--ignore-engines`, execução dos testes do Vitest (`yarn test`) e dos testes E2E do Playwright (`yarn test:e2e`).
     - `cd.yml`: Disparado a cada `push` na branch `main`. Realiza o build de produção (`yarn build`) e publica no GitHub Pages via `actions/deploy-pages@v4`.
-    - Configurado `base: process.env.VITE_BASE_URL || './'` no `vite.config.ts` e fallback de SPA `public/404.html` integrado ao script no `index.html`, garantindo que rotas diretas da SPA não gerem erro 404 ao serem recarregadas.
+    - Configurado `base` dinâmico no `vite.config.ts` (raiz `'/'` para desenvolvimento/E2E e `'/utfpr-aplicacao-web-dinamica-e-interativa/'` para produção) e fallback SPA `public/404.html` integrado ao script de redirecionamento no `index.html`, garantindo que rotas diretas da SPA não gerem erro 404 ao serem recarregadas.
 
 ---
 
@@ -128,7 +128,7 @@ O desenvolvimento deste projeto contou com o apoio de ferramentas de IA (Google 
 - **Aceleração de Código e Schemas:** Criação e refinamento de schemas do Zod com validação rigorosa para os tipos retornados pela API DummyJSON de receitas.
 - **Testes e Casos de Borda:** Elaboração de cenários de teste para validações de formulário, redirecionamento de rotas protegidas e fluxos E2E no Playwright.
 - **Arquitetura e Refatoração:** Configuração dos interceptors do Axios, abstração dos Custom Hooks (`useAuth`, `useFavorites`) e estruturação do pipeline de CI/CD no GitHub Actions.
-- **Responsabilidade Técnica:** Todo o código gerado foi revisado, testado localmente, ajustado para conformidade com a versão mais recente das bibliotecas (React 19, Mantine UI v9, Zod 4, Vitest 5 e Playwright) e validado com compilação estrita do TypeScript.
+- **Responsabilidade Técnica:** Todo o código gerado foi revisado, testado localmente, ajustado para conformidade com a versão mais recente das bibliotecas (React 19, Mantine UI v9, Zod 4, Vitest 5, Playwright 1.64 e Node.js 22 LTS) e validado com compilação estrita do TypeScript 6.
 
 ---
 

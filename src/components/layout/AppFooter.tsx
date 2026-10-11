@@ -23,7 +23,7 @@ export const AppFooter: React.FC = () => {
           </Group>
 
           <Text size="xs" c="dimmed">
-            Projeto Final UTFPR • Dados consumidos da API{' '}
+            Projeto disciplina UTFPR - Desenvolvimento de Aplicações Web Dinâmicas e Interativas • Dados consumidos da API{' '}
             <Anchor href="https://dummyjson.com" target="_blank" rel="noopener noreferrer" c="orange">
               DummyJSON
             </Anchor>

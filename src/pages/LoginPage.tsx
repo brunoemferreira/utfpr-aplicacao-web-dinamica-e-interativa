@@ -162,7 +162,7 @@ export const LoginPage: React.FC = () => {
         <Divider my="lg" />
 
         <Text size="xs" c="dimmed" ta="center">
-          Autenticação JWT processada com segurança via endpoint DummyJSON <code>POST /auth/login</code>.
+          Autenticação Segura.
         </Text>
       </Paper>
     </Container>

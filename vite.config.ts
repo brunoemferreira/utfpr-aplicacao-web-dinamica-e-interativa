@@ -2,9 +2,9 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: process.env.VITE_BASE_URL || '/utfpr-aplicacao-web-dinamica-e-interativa/',
+  base: process.env.VITE_BASE_URL || (command === 'build' ? '/utfpr-aplicacao-web-dinamica-e-interativa/' : '/'),
   test: {
     globals: true,
     environment: 'jsdom',
@@ -13,4 +13,4 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
     exclude: ['e2e/**', 'node_modules/**'],
   },
-});
+}));

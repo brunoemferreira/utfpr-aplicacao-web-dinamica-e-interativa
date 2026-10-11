@@ -18,7 +18,7 @@ export const AppFooter: React.FC = () => {
           <Group gap="xs">
             <IconChefHat size={22} color="var(--mantine-color-orange-6)" />
             <Text fw={700} size="sm">
-              SaborArt — Aplicação Web Dinâmica e Interativa
+              SaborArt — Receitas da alta gastronomia.
             </Text>
           </Group>
 

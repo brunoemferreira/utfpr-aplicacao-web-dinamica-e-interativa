@@ -164,7 +164,7 @@ export const AdminPage: React.FC = () => {
                 Permissão
               </Text>
               <Text fw={700} size="xl" mt={4} c="green">
-                Acesso Total (JWT)
+                Acesso Total
               </Text>
             </div>
             <IconFlame size={28} color="red" />

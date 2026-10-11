@@ -30,8 +30,11 @@ export const LoginPage: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  // Destino original antes do redirecionamento pelo ProtectedRoute
-  const destination = (location.state as { from?: { pathname: string } })?.from?.pathname || '/admin';
+  // Destino pós-login validado contra Open Redirect (deve iniciar com '/' e não '//')
+  const rawPath = (location.state as { from?: { pathname: string } })?.from?.pathname;
+  const destination = rawPath && rawPath.startsWith('/') && !rawPath.startsWith('//')
+    ? rawPath
+    : '/admin';
 
   const form = useForm<LoginFormData>({
     initialValues: {

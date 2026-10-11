@@ -44,6 +44,12 @@ api.interceptors.response.use(
       if (status === 400) {
         friendlyMessage = error.response.data?.message || 'Dados inválidos enviados na requisição.';
       } else if (status === 401) {
+        try {
+          localStorage.removeItem(AUTH_TOKEN_KEY);
+          localStorage.removeItem(AUTH_USER_KEY);
+        } catch {
+          // Ignora falha de acesso a localStorage
+        }
         friendlyMessage = 'Credenciais inválidas ou sessão expirada. Por favor, autentique-se novamente.';
       } else if (status === 403) {
         friendlyMessage = 'Você não possui permissão para acessar este recurso.';
@@ -108,7 +114,7 @@ export const recipesService = {
   },
 
   async getById(id: number | string): Promise<Recipe> {
-    const response = await api.get(`/recipes/${id}`);
+    const response = await api.get(`/recipes/${encodeURIComponent(String(id))}`);
     const validated = validateRecipe(response.data);
     if (!validated) {
       throw new Error('Falha ao validar detalhes da receita recebida.');
@@ -148,7 +154,7 @@ export const recipesService = {
   },
 
   async delete(id: number | string): Promise<boolean> {
-    await api.delete(`/recipes/${id}`);
+    await api.delete(`/recipes/${encodeURIComponent(String(id))}`);
     return true;
   },
 };

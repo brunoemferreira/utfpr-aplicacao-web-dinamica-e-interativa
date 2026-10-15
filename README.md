@@ -1,3 +1,25 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/brunoemferreira/pos-web-utfpr/main/images/UTFPR_logo.svg.png" alt="UTFPR Logo" width="200">
+  <h1><strong>Pós-Graduação em Desenvolvimento Web com TypeScript e Inteligência Artificial</strong></h1>
+  <h3>Universidade Tecnológica Federal do Paraná (UTFPR)</h3>
+  <p>👨‍🎓 <strong>Aluno:</strong> Bruno E. M. Ferreira &nbsp;|&nbsp; 🎓 <strong>Turma:</strong> 2026 &nbsp;|&nbsp; 📅 <strong>Período:</strong> Abril/2026 - Março/2028</p>
+  
+  <h3>🛠️ Tecnologias Utilizadas no Projeto</h3>
+  <p>
+    <a href="#"><img src="https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React 19"></a>
+    <a href="#"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Mantine_UI-339AF0?style=for-the-badge&logo=mantine&logoColor=white" alt="Mantine UI"></a>
+    <a href="#"><img src="https://img.shields.io/badge/React_Router_7-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white" alt="React Router"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod&logoColor=white" alt="Zod"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest"></a>
+    <a href="#"><img src="https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white" alt="Playwright"></a>
+    <a href="#"><img src="https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white" alt="GitHub Pages"></a>
+  </p>
+</div>
+
+---
+
 # SaborArt — Alta Gastronomia & Receitas Culinárias
 ### Projeto disciplina UTFPR - Desenvolvimento de Aplicações Web Dinâmicas e Interativas
 
